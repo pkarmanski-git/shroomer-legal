@@ -1,0 +1,128 @@
+:root {
+  color-scheme: light dark;
+  --bg: #faf9f6;
+  --fg: #1c1c1a;
+  --muted: #5b5b56;
+  --accent: #b3701b;
+  --line: #ddd8cc;
+  --card: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16150f;
+    --fg: #ece9e0;
+    --muted: #a8a397;
+    --accent: #e0a75e;
+    --line: #35322a;
+    --card: #1f1d16;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+header.page {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+header.page .mark {
+  font-size: 1.6rem;
+}
+
+header.page .name {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  margin: 2.2rem 0 0.6rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--line);
+}
+
+p, li { color: var(--fg); }
+
+.updated {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.note {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin: 1.2rem 0 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.8rem 0 1.2rem;
+  font-size: 0.95rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+th {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+a { color: var(--accent); }
+
+.callout {
+  border-left: 3px solid var(--accent);
+  padding: 0.2rem 0 0.2rem 1rem;
+  margin: 1rem 0;
+}
+
+strong { font-weight: 700; }
+
+footer.page {
+  margin-top: 3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+footer.page a { color: var(--muted); }
+
+ul { padding-left: 1.3rem; }
+li { margin: 0.3rem 0; }
