@@ -14,7 +14,7 @@
 </header>
 
 <h1>Polityka prywatności aplikacji Shroomer</h1>
-<p class="updated">Data ostatniej zmiany: 17 września 2026</p>
+<p class="updated">Data ostatniej zmiany: 23 września 2026</p>
 
 <div class="note">
   Dokument nie jest poradą prawną. Jeżeli szukasz informacji o usunięciu konta,
@@ -34,9 +34,16 @@ miejsca znalezisk i pokazuje je innym użytkownikom aplikacji.</p>
   <tr><td>Nazwa wyświetlana</td><td>Podajesz w aplikacji</td><td>Pokazanie Cię innym użytkownikom</td></tr>
   <tr><td><strong>Dokładna lokalizacja (GPS)</strong></td><td>Z telefonu, <strong>także przy zgaszonym ekranie</strong></td><td>Zapis trasy wyprawy i miejsc znalezisk</td></tr>
   <tr><td><strong>Dokładne współrzędne znalezisk</strong></td><td>Z telefonu w momencie dodania znaleziska</td><td>Pokazanie znaleziska na mapie</td></tr>
-  <tr><td>Zdjęcia znalezisk</td><td>Z aparatu telefonu</td><td>Zapis i pokazanie znaleziska</td></tr>
+  <tr><td>Zdjęcia znalezisk</td><td>Z aparatu lub galerii telefonu</td><td>Zapis i pokazanie znaleziska</td></tr>
+  <tr><td>Zdjęcie profilowe</td><td>Wybierasz z galerii telefonu (opcjonalnie)</td><td>Pokazanie Cię innym użytkownikom</td></tr>
   <tr><td>Gatunek, ilość, notatki</td><td>Wpisujesz sam</td><td>Statystyki i historia wypraw</td></tr>
+  <tr><td>Komentarze i reakcje</td><td>Piszesz i dajesz sam</td><td>Rozmowa pod wyprawami i znaleziskami</td></tr>
+  <tr><td>Zgłoszenia i blokady</td><td>Zgłaszasz komentarz lub blokujesz użytkownika</td><td>Moderacja; zgłoszenie zawiera Twój identyfikator jako zgłaszającego i jest rozpatrywane ręcznie</td></tr>
+  <tr><td>Podpowiedzi rozpoznawania</td><td>Z modelu w telefonie</td><td>Zapis, jaką podpowiedź pokazał model i jaki gatunek wybrałeś (bez zdjęcia) — do oceny jakości rozpoznawania</td></tr>
 </table>
+<p><strong>Rozpoznawanie gatunku działa na telefonie.</strong> Zdjęcie robione do
+podpowiedzi nie jest wysyłane do żadnej usługi rozpoznawania — model jest częścią
+aplikacji. Zdjęcie trafia na serwer tylko wtedy, gdy zapiszesz je jako znalezisko.</p>
 <p><strong>Nie zbieramy</strong> żadnych danych reklamowych, nie profilujemy, nie
 sprzedajemy danych i nie mamy w aplikacji reklam ani analityki zachowania.</p>
 
@@ -74,11 +81,11 @@ ustawienie, które miały — sprawdź je w Profil → Prywatność.</p>
 
 <h2>Komu powierzamy dane</h2>
 <ul>
-  <li><strong>Supabase</strong> — baza danych i przechowywanie zdjęć. Dane w
-  tranzycie szyfrowane (HTTPS).</li>
-  <li><strong>Cloudflare R2</strong> — hosting podkładu mapy. <strong>Nie trafiają
-  tam żadne dane osobowe</strong> — aplikacja tylko pobiera stamtąd gotowe kafle
-  mapy.</li>
+  <li><strong>Supabase</strong> — baza danych i przechowywanie zdjęć. Serwery w
+  Unii Europejskiej (Frankfurt, Niemcy). Dane w tranzycie szyfrowane (HTTPS).</li>
+  <li><strong>Cloudflare R2</strong> — hosting podkładu mapy. <strong>Nie wysyłamy
+  tam żadnych danych osobowych</strong> — aplikacja tylko pobiera stamtąd gotowe kafle
+  mapy (jak każdy serwer, widzi przy tym adres IP pobierającego).</li>
   <li><strong>Resend</strong> — wysyłka e-maili logowania (np. reset hasła). Widzi
   wyłącznie Twój adres e-mail w momencie wysyłki.</li>
 </ul>
@@ -86,7 +93,8 @@ ustawienie, które miały — sprawdź je w Profil → Prywatność.</p>
 
 <h2>Jak długo trzymamy dane</h2>
 <p>Dane Twojego konta trzymamy tak długo, jak długo istnieje konto. Po jego usunięciu
-znikają natychmiast i bezpowrotnie — patrz niżej.</p>
+znikają z naszej bazy natychmiast i bezpowrotnie; kopie zapasowe po stronie dostawcy
+(Supabase) są nadpisywane w cyklu do 7 dni — patrz niżej.</p>
 
 <h2>Usunięcie konta i danych</h2>
 <p><strong>W aplikacji:</strong> Profil → Prywatność → <strong>Usuń konto</strong>
@@ -98,7 +106,9 @@ zarejestrowane jest konto. Usuwamy je w ciągu 30 dni. Szczegóły:
 <p>Usunięcie konta kasuje <strong>wszystko</strong>: konto, profil, wszystkie
 wyprawy, trasy, surowe punkty GPS, znaleziska, zapisane pozycje auta i wszystkie
 zdjęcia. Operacji nie da się cofnąć — nie mamy kosza ani kopii, z której dałoby się to
-przywrócić.</p>
+przywrócić (poza cyklem kopii zapasowych dostawcy opisanym wyżej).</p>
+<p>Jeśli wyprawę współtworzyłeś z innymi, usunięcie konta jej założyciela usuwa całą
+wyprawę razem ze znaleziskami pozostałych uczestników.</p>
 
 <h2>Twoje prawa</h2>
 <p>Masz prawo do dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia
@@ -111,6 +121,12 @@ prawem.</p>
 <h2>Dzieci</h2>
 <p>Aplikacja nie jest przeznaczona dla osób poniżej 16 roku życia i świadomie nie
 zbieramy ich danych.</p>
+
+<h2>Zdjęcia użyte do wytrenowania modelu</h2>
+<p>Model rozpoznawania został wytrenowany na zdjęciach udostępnionych na licencjach
+Creative Commons. Lista autorów i licencji:
+<a href="attribution.html">attribution.html</a>. Obecnie zdjęcia użytkowników
+aplikacji nie są używane do trenowania modelu.</p>
 
 <h2>Bezpieczeństwo grzybowe — zastrzeżenie</h2>
 <p>Aplikacja pokazuje opisy gatunków i ostrzeżenia o gatunkach podobnych, zestawione
