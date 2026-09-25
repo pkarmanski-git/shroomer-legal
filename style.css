@@ -1,22 +1,16 @@
-:root {
-  color-scheme: light dark;
-  --bg: #faf9f6;
-  --fg: #1c1c1a;
-  --muted: #5b5b56;
-  --accent: #b3701b;
-  --line: #ddd8cc;
-  --card: #ffffff;
-}
+@font-face { font-family: "Rubik"; font-weight: 400; font-display: swap; src: url("fonts/Rubik-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Rubik"; font-weight: 500; font-display: swap; src: url("fonts/Rubik-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Rubik"; font-weight: 700; font-display: swap; src: url("fonts/Rubik-Bold.ttf") format("truetype"); }
+@font-face { font-family: "DynaPuff"; font-weight: 700; font-display: swap; src: url("fonts/DynaPuff-Bold.ttf") format("truetype"); }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #16150f;
-    --fg: #ece9e0;
-    --muted: #a8a397;
-    --accent: #e0a75e;
-    --line: #35322a;
-    --card: #1f1d16;
-  }
+:root {
+  color-scheme: dark;
+  --bg: #12160f;
+  --fg: #ede8dc;
+  --muted: #9bae86;
+  --accent: #e8a33d;
+  --line: #28311f;
+  --card: #1d241a;
 }
 
 * { box-sizing: border-box; }
@@ -26,7 +20,7 @@ body {
   padding: 0;
   background: var(--bg);
   color: var(--fg);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
 }
 
@@ -44,16 +38,19 @@ header.page {
 }
 
 header.page .mark {
-  font-size: 1.6rem;
+  height: 1.8rem;
+  width: auto;
 }
 
 header.page .name {
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-family: "DynaPuff", "Rubik", sans-serif;
+  font-size: 1.6rem;
 }
 
 h1 {
-  font-size: 1.6rem;
+  font-family: "DynaPuff", "Rubik", sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
   margin: 1.5rem 0 0.5rem;
 }
 
