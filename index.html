@@ -16,7 +16,7 @@
 </header>
 
 <h1>Polityka prywatności aplikacji Shroomer</h1>
-<p class="updated">Data ostatniej zmiany: 23 września 2026</p>
+<p class="updated">Data ostatniej zmiany: 25 września 2026</p>
 
 <div class="note">
   Dokument nie jest poradą prawną. Jeżeli szukasz informacji o usunięciu konta,
@@ -32,14 +32,15 @@ miejsca znalezisk i pokazuje je innym użytkownikom aplikacji.</p>
 <h2>Jakie dane zbieramy</h2>
 <table>
   <tr><th>Dane</th><th>Skąd</th><th>Po co</th></tr>
-  <tr><td>Adres e-mail</td><td>Podajesz przy rejestracji</td><td>Logowanie i odzyskiwanie dostępu</td></tr>
-  <tr><td>Nazwa wyświetlana</td><td>Podajesz w aplikacji</td><td>Pokazanie Cię innym użytkownikom</td></tr>
+  <tr><td>Adres e-mail</td><td>Podajesz przy rejestracji albo przekazuje go Google, jeśli logujesz się kontem Google</td><td>Logowanie i odzyskiwanie dostępu</td></tr>
+  <tr><td>Nazwa wyświetlana</td><td>Podajesz w aplikacji; przy logowaniu kontem Google na start bierzemy imię i nazwisko z tego konta (możesz je zmienić)</td><td>Pokazanie Cię innym użytkownikom</td></tr>
   <tr><td><strong>Dokładna lokalizacja (GPS)</strong></td><td>Z telefonu, <strong>także przy zgaszonym ekranie</strong></td><td>Zapis trasy wyprawy i miejsc znalezisk</td></tr>
   <tr><td><strong>Dokładne współrzędne znalezisk</strong></td><td>Z telefonu w momencie dodania znaleziska</td><td>Pokazanie znaleziska na mapie</td></tr>
   <tr><td>Zdjęcia znalezisk</td><td>Z aparatu lub galerii telefonu</td><td>Zapis i pokazanie znaleziska</td></tr>
   <tr><td>Zdjęcie profilowe</td><td>Wybierasz z galerii telefonu (opcjonalnie)</td><td>Pokazanie Cię innym użytkownikom</td></tr>
   <tr><td>Gatunek, ilość, notatki</td><td>Wpisujesz sam</td><td>Statystyki i historia wypraw</td></tr>
   <tr><td>Komentarze i reakcje</td><td>Piszesz i dajesz sam</td><td>Rozmowa pod wyprawami i znaleziskami</td></tr>
+  <tr><td>Token powiadomień push</td><td>Z telefonu, jeśli zgodzisz się na powiadomienia</td><td>Powiadomienie o nowym komentarzu pod Twoją wyprawą; usuwamy go przy wylogowaniu</td></tr>
   <tr><td>Zgłoszenia i blokady</td><td>Zgłaszasz komentarz lub blokujesz użytkownika</td><td>Moderacja; zgłoszenie zawiera Twój identyfikator jako zgłaszającego i jest rozpatrywane ręcznie</td></tr>
   <tr><td>Podpowiedzi rozpoznawania</td><td>Z modelu w telefonie</td><td>Zapis, jaką podpowiedź pokazał model i jaki gatunek wybrałeś (bez zdjęcia) — do oceny jakości rozpoznawania</td></tr>
 </table>
@@ -90,7 +91,21 @@ ustawienie, które miały — sprawdź je w Profil → Prywatność.</p>
   mapy (jak każdy serwer, widzi przy tym adres IP pobierającego).</li>
   <li><strong>Resend</strong> — wysyłka e-maili logowania (np. reset hasła). Widzi
   wyłącznie Twój adres e-mail w momencie wysyłki.</li>
+  <li><strong>Google</strong> — dwie rzeczy:
+    <ul>
+      <li><strong>Logowanie kontem Google</strong>, tylko jeśli je wybierzesz. Google
+      potwierdza nam Twój adres e-mail oraz imię i nazwisko. Nie dostajemy hasła do
+      konta Google.</li>
+      <li><strong>Firebase Cloud Messaging</strong> — dostarcza powiadomienia push na
+      telefon z Androidem. Widzi token powiadomień Twojego telefonu i treść
+      powiadomienia (nazwę osoby, która skomentowała, i początek komentarza).</li>
+    </ul>
+  </li>
+  <li><strong>Expo</strong> — pośredniczy w wysyłce powiadomień push do Google. Widzi
+  to samo co Firebase Cloud Messaging: token i treść powiadomienia.</li>
 </ul>
+<p>Google i Expo mogą przetwarzać te dane na serwerach poza Unią Europejską, m.in.
+w USA.</p>
 <p>Nie przekazujemy danych nikomu innemu i nie sprzedajemy ich.</p>
 
 <h2>Jak długo trzymamy dane</h2>
