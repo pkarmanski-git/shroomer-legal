@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy — Shroomer</title>
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<header class="page">
+  <img class="mark" src="../logo-mark.png" alt="">
+  <span class="name">Shroomer</span>
+  <a href="../index.html" hreflang="pl" lang="pl" style="margin-left: auto;">Polski</a>
+</header>
+
+<h1>Shroomer app privacy policy</h1>
+<p class="updated">Last updated: 25 September 2026</p>
+
+<div class="note">
+  This is a translation of the Polish original; if they differ, the Polish version
+  applies. This document is not legal advice. If you are looking for information about
+  deleting your account, there is a separate page:
+  <a href="account-deletion.html">account-deletion.html</a>.
+</div>
+
+<h2>Who is responsible for your data</h2>
+<p>The data controller is Paweł Karmański, contact:
+<a href="mailto:shroomer.app@gmail.com">shroomer.app@gmail.com</a>.</p>
+<p>Shroomer is an app for recording mushroom-picking trips: it records your route, saves
+the spots where you found mushrooms and shows them to other users of the app.</p>
+
+<h2>What data we collect</h2>
+<table>
+  <tr><th>Data</th><th>Where it comes from</th><th>What it is for</th></tr>
+  <tr><td>E-mail address</td><td>You enter it when you register, or Google provides it if you sign in with a Google account</td><td>Signing in and recovering access</td></tr>
+  <tr><td>Display name</td><td>You enter it in the app; when you sign in with a Google account, we start with the first and last name from that account (you can change it)</td><td>Showing you to other users</td></tr>
+  <tr><td><strong>Precise location (GPS)</strong></td><td>From your phone, <strong>also while the screen is off</strong></td><td>Recording the trip route and the spots of your finds</td></tr>
+  <tr><td><strong>Precise coordinates of finds</strong></td><td>From your phone at the moment you add a find</td><td>Showing the find on the map</td></tr>
+  <tr><td>Photos of finds</td><td>From your phone's camera or gallery</td><td>Saving and showing the find</td></tr>
+  <tr><td>Profile photo</td><td>You pick it from your phone's gallery (optional)</td><td>Showing you to other users</td></tr>
+  <tr><td>Species, quantity, notes</td><td>You enter them yourself</td><td>Statistics and trip history</td></tr>
+  <tr><td>Comments and reactions</td><td>You write and give them yourself</td><td>Conversation under trips and finds</td></tr>
+  <tr><td>Push notification token</td><td>From your phone, if you agree to notifications</td><td>Notifying you of a new comment under your trip; we delete it when you sign out</td></tr>
+  <tr><td>Reports and blocks</td><td>You report a comment or block a user</td><td>Moderation; a report contains your identifier as the person reporting and is reviewed manually</td></tr>
+  <tr><td>Recognition suggestions</td><td>From the model on your phone</td><td>A record of which suggestion the model showed and which species you chose (without the photo) — to assess recognition quality</td></tr>
+</table>
+<p><strong>Species recognition runs on your phone.</strong> The photo taken for a
+suggestion is not sent to any recognition service — the model is part of the app.
+A photo reaches the server only if you save it as a find.</p>
+<p><strong>We do not collect</strong> any advertising data, we do not profile you, we do
+not sell data, and the app has no ads and no behavioural analytics.</p>
+
+<h2>Background location — why we ask for this permission</h2>
+<p>A mushroom-picking trip lasts for hours with the phone in your pocket and the screen
+off. Without permission to use location in the background, the track would break off
+after a moment, and the <strong>back to the car</strong> feature — which guides you back
+along your own track — would stop working. It is a safety feature in the forest, not a
+convenience.</p>
+<p>Location is recorded <strong>only during an ongoing trip</strong>, which you start
+yourself and end yourself. Once the trip ends, the app stops reading your position.
+While recording, a persistent notification is shown in your phone's notification bar —
+we never record invisibly.</p>
+
+<h2>Who sees your data — the most important part of this document</h2>
+<p>Shroomer is a social app. Your trips, <strong>with the route and find pins accurate
+to the metre</strong>, and photos of your finds are visible to other users of the app.
+How far this visibility extends depends <strong>solely</strong> on one setting in the
+app (Profile → Privacy):</p>
+<ul>
+  <li><strong>Private account</strong> — the default for new accounts. Your trips can be
+  seen <strong>only by people you have allowed yourself</strong>, by accepting their
+  follow request. People you have already accepted keep access until you remove
+  them.</li>
+  <li><strong>Public account</strong> — only if you turn it on yourself. Your trips,
+  routes, pins and photos can then be seen by <strong>every signed-in person</strong>,
+  including someone who does not follow you: they can find your account by name, open it
+  and look at everything. Following you then does not require your consent.</li>
+</ul>
+<p>Regardless of this setting, <strong>your display name and number of trips are visible
+to every signed-in person</strong> — otherwise nobody could ask you for access.</p>
+<p class="callout"><strong>Registration in the app is open.</strong> If you switch your
+account to public, a person you do not know can see exactly where you pick mushrooms.
+Accounts created before 17 September 2026 kept the setting they had — check it in
+Profile → Privacy.</p>
+
+<h2>Who we entrust data to</h2>
+<ul>
+  <li><strong>Supabase</strong> — database and photo storage. Servers in the European
+  Union (Frankfurt, Germany). Data encrypted in transit (HTTPS).</li>
+  <li><strong>Cloudflare R2</strong> — hosting of the base map. <strong>We do not send
+  any personal data there</strong> — the app only downloads ready-made map tiles from it
+  (like any server, it sees the IP address of the device downloading them).</li>
+  <li><strong>Resend</strong> — sending sign-in e-mails (e.g. password reset). It sees
+  only your e-mail address at the moment of sending.</li>
+  <li><strong>Google</strong> — two things:
+    <ul>
+      <li><strong>Sign-in with a Google account</strong>, only if you choose it. Google
+      confirms to us your e-mail address and your first and last name. We do not receive
+      your Google account password.</li>
+      <li><strong>Firebase Cloud Messaging</strong> — delivers push notifications to
+      Android phones. It sees your phone's notification token and the content of the
+      notification (the name of the person who commented and the beginning of the
+      comment).</li>
+    </ul>
+  </li>
+  <li><strong>Expo</strong> — acts as an intermediary in sending push notifications to
+  Google. It sees the same as Firebase Cloud Messaging: the token and the content of the
+  notification.</li>
+</ul>
+<p>Google and Expo may process this data on servers outside the European Union,
+including in the USA.</p>
+<p>We do not pass data to anyone else and we do not sell it.</p>
+
+<h2>How long we keep data</h2>
+<p>We keep your account data for as long as the account exists. After it is deleted,
+the data disappears from our database immediately and irreversibly; backups on the
+provider's side (Supabase) are overwritten in a cycle of up to 7 days — see below.</p>
+
+<h2>Deleting your account and data</h2>
+<p><strong>In the app:</strong> Profile → Privacy → <strong>Delete account</strong>
+(you have to press and hold the button).</p>
+<p><strong>Without the app:</strong> write to
+<a href="mailto:shroomer.app@gmail.com">shroomer.app@gmail.com</a> from the address the
+account is registered with. We delete it within 30 days. Details:
+<a href="account-deletion.html">account-deletion.html</a>.</p>
+<p>Deleting your account erases <strong>everything</strong>: the account, profile, all
+trips, routes, raw GPS points, finds, saved car positions and all photos. The operation
+cannot be undone — we have no trash bin and no copy from which it could be restored
+(apart from the provider's backup cycle described above).</p>
+<p>If you created a trip together with others, deleting the account of the person who
+started it deletes the whole trip, together with the other participants' finds.</p>
+
+<h2>Your rights</h2>
+<p>You have the right to access your data, to have it rectified or erased, to restrict
+its processing, to data portability and to object. Write to
+<a href="mailto:shroomer.app@gmail.com">shroomer.app@gmail.com</a>.</p>
+<p>You also have the right to lodge a complaint with the President of the Personal Data
+Protection Office (Prezes Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193
+Warszawa, Poland) if you believe that we process your data unlawfully.</p>
+
+<h2>Children</h2>
+<p>The app is not intended for persons under 16 years of age, and we do not knowingly
+collect their data.</p>
+
+<h2>Photos used to train the model</h2>
+<p>The recognition model was trained on photos shared under Creative Commons licences.
+List of authors and licences: <a href="../attribution.html">attribution.html</a>.
+Photos of the app's users are currently not used to train the model.</p>
+
+<h2>Mushroom safety — disclaimer</h2>
+<p>The app shows species descriptions and warnings about similar species, compiled from
+published sources. <strong>They have not been verified by a mycologist and are not
+advice on edibility.</strong> Never eat a mushroom based on what the app shows.</p>
+
+<h2>Changes to this policy</h2>
+<p>We will inform you about significant changes in the app. The date of the last change
+is at the top of the document.</p>
+
+<footer class="page">
+  Shroomer — <a href="mailto:shroomer.app@gmail.com">shroomer.app@gmail.com</a>
+</footer>
+</main>
+</body>
+</html>
