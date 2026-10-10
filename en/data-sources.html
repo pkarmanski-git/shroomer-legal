@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conditions map data sources — Shroomer</title>
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<style>td { overflow-wrap: anywhere; } th { width: 30%; }</style>
+</head>
+<body>
+<main>
+<header class="page">
+  <img class="mark" src="../logo-mark.png" alt="">
+  <span class="name">Shroomer</span>
+  <a href="../data-sources.html" hreflang="pl" lang="pl" style="margin-left: auto;">Polski</a>
+</header>
+
+<h1>Data sources of the conditions map</h1>
+<p class="updated">Last updated: 10 October 2026</p>
+
+<div class="note">The fruiting-conditions map in the Shroomer app is computed from the weather, forest and soil data below. Each source has its own licence or terms; this page gives the required notices, citations and a description of our changes. Shroomer is not affiliated with or endorsed by any data provider. The map shows conditions, not the probability of finding mushrooms.</div>
+
+<h2 id="natural_earth">Natural Earth</h2>
+<table>
+  <tr><th>Provider</th><td>Natural Earth</td></tr>
+  <tr><th>Product</th><td>Admin 0 countries 1:10m (Poland outline)</td></tr>
+  <tr><th>Licence / terms</th><td><a href="https://www.naturalearthdata.com/about/terms-of-use/">Public domain</a></td></tr>
+  <tr><th>Source</th><td><a href="https://www.naturalearthdata.com/">https://www.naturalearthdata.com/</a></td></tr>
+  <tr><th>Changes</th><td>Reprojected to EPSG:2180 and used as the national mask.</td></tr>
+</table>
+
+<h2 id="ecmwf_ifs">ECMWF IFS open data</h2>
+<table>
+  <tr><th>Provider</th><td>European Centre for Medium-Range Weather Forecasts (ECMWF)</td></tr>
+  <tr><th>Product</th><td>IFS open data, oper/fc, 0.25°, 00 UTC cycle: 2t, tp, sot, vsw</td></tr>
+  <tr><th>Licence / terms</th><td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td></tr>
+  <tr><th>Source</th><td><a href="https://www.ecmwf.int/en/forecasts/datasets/open-data">https://www.ecmwf.int/en/forecasts/datasets/open-data</a></td></tr>
+  <tr><th>Required notices</th><td>This service is based on data and products of the European Centre for Medium-Range Weather Forecasts (ECMWF).<br>Source: www.ecmwf.int<br>This ECMWF data is published under a Creative Commons Attribution 4.0 International (CC BY 4.0).<br>ECMWF does not accept any liability whatsoever for any error or omission in the data, their availability, or for any loss or damage arising from their use.</td></tr>
+  <tr><th>Changes</th><td>Cropped to Poland, units converted, cumulative rain differenced, aggregated to Warsaw-local days, sampled onto a 1 km grid and combined into a fruiting-conditions index.</td></tr>
+</table>
+
+<h2 id="era5_land">ERA5-Land</h2>
+<table>
+  <tr><th>Provider</th><td>Copernicus Climate Change Service (C3S), ECMWF</td></tr>
+  <tr><th>Product</th><td>ERA5-Land hourly data from 1950 to present (reanalysis-era5-land)</td></tr>
+  <tr><th>Licence / terms</th><td><a href="https://cds.climate.copernicus.eu/licences/cc-by">CC BY 4.0</a></td></tr>
+  <tr><th>Source</th><td><a href="https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land">https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land</a></td></tr>
+  <tr><th>Citation</th><td>Muñoz Sabater, J. (2019): ERA5-Land hourly data from 1950 to present. Copernicus Climate Change Service (C3S) Climate Data Store (CDS). DOI: 10.24381/cds.e2161bac</td></tr>
+  <tr><th>Required notices</th><td>Contains modified Copernicus Climate Change Service information 2026.<br>Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus information or data it contains.</td></tr>
+  <tr><th>Changes</th><td>Recent days and the 1991–2020 climatology: units converted, rain deaccumulated, regridded to the IFS 0.25° grid, aggregated to days, turned into a moisture balance and quantiles, and combined into a fruiting-conditions index.</td></tr>
+</table>
+
+<h2 id="noaa_gfs">NOAA GFS</h2>
+<table>
+  <tr><th>Provider</th><td>NOAA / NCEP</td></tr>
+  <tr><th>Product</th><td>GFS 0.25°, archived 00 UTC cycles (fallback only)</td></tr>
+  <tr><th>Licence / terms</th><td><a href="https://www.weather.gov/disclaimer">U.S. public domain</a></td></tr>
+  <tr><th>Source</th><td><a href="https://registry.opendata.aws/noaa-gfs-bdp-pds/">https://registry.opendata.aws/noaa-gfs-bdp-pds/</a></td></tr>
+  <tr><th>Changes</th><td>Used only when IFS or ERA5-Land days are missing; same processing as IFS.</td></tr>
+</table>
+
+<h2 id="clms_fty2021">CLMS Forest Type 2021</h2>
+<table>
+  <tr><th>Provider</th><td>European Union, Copernicus Land Monitoring Service (EEA)</td></tr>
+  <tr><th>Product</th><td>High Resolution Layer Forest Type 2021, 100 m (clms_vlcc_forest-type_europe_100m_3yearly_v1)</td></tr>
+  <tr><th>Licence / terms</th><td><a href="https://land.copernicus.eu/en/data-policy">Copernicus data policy (free, full and open; attribution required)</a></td></tr>
+  <tr><th>Source</th><td><a href="https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover">https://land.copernicus.eu/en/products/high-resolution-layer-forests-and-tree-cover</a></td></tr>
+  <tr><th>Required notices</th><td>Generated using European Union&#x27;s Copernicus Land Monitoring Service information.<br>The CLMS product was modified by Shroomer; the European Union does not endorse this service.</td></tr>
+  <tr><th>Changes</th><td>Mosaicked over Poland, aggregated to forest and conifer shares per 1 km cell, joined with OpenStreetMap woodland to draw forest areas, and vectorised.</td></tr>
+</table>
+
+<h2 id="cgls_lc100_2019">CGLS LC100 2019</h2>
+<table>
+  <tr><th>Provider</th><td>Copernicus Global Land Service</td></tr>
+  <tr><th>Product</th><td>Land Cover 100 m v3.0.1, 2019 (fallback only)</td></tr>
+  <tr><th>Licence / terms</th><td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td></tr>
+  <tr><th>Source</th><td><a href="https://zenodo.org/records/3939050">https://zenodo.org/records/3939050</a></td></tr>
+  <tr><th>Required notices</th><td>Generated using Copernicus Global Land Service information.</td></tr>
+  <tr><th>Changes</th><td>Forest classes aggregated to forest and conifer shares per 1 km cell.</td></tr>
+</table>
+
+<h2 id="soilgrids">SoilGrids 2.0</h2>
+<table>
+  <tr><th>Provider</th><td>ISRIC – World Soil Information</td></tr>
+  <tr><th>Product</th><td>SoilGrids 2.0 phh2o and sand, 0–5 cm, 1 km aggregates</td></tr>
+  <tr><th>Licence / terms</th><td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td></tr>
+  <tr><th>Source</th><td><a href="https://isric.org/explore/soilgrids">https://isric.org/explore/soilgrids</a></td></tr>
+  <tr><th>Citation</th><td>Poggio, L., de Sousa, L. M., Batjes, N. H., Heuvelink, G. B. M., Kempen, B., Ribeiro, E., and Rossiter, D. (2021): SoilGrids 2.0: producing soil information for the globe with quantified spatial uncertainty. SOIL 7, 217–240. https://doi.org/10.5194/soil-7-217-2021</td></tr>
+  <tr><th>Changes</th><td>Reprojected to the 1 km grid, units converted, holes up to 5 km filled from neighbours.</td></tr>
+</table>
+
+<h2 id="bdl">Bank Danych o Lasach</h2>
+<table>
+  <tr><th>Provider</th><td>Państwowe Gospodarstwo Leśne Lasy Państwowe</td></tr>
+  <tr><th>Product</th><td>BDL WFS, 17 RDLP_*_wydzielenia stand layers (state forests)</td></tr>
+  <tr><th>Licence / terms</th><td><a href="https://www.bdl.lasy.gov.pl/portal/regulamin">BDL portal terms, part V (reuse of public information)</a></td></tr>
+  <tr><th>Source</th><td><a href="https://www.bdl.lasy.gov.pl/portal/">https://www.bdl.lasy.gov.pl/portal/</a></td></tr>
+  <tr><th>Required notices</th><td>Źródło: Bank Danych o Lasach, stan danych 2026 (a_year), pozyskano 5.10.2026.</td></tr>
+  <tr><th>Changes</th><td>Stand attributes aggregated per 1 km cell by intersection area into host, site and moisture-class shares.</td></tr>
+  <tr><th>Data as of</th><td>2026</td></tr>
+  <tr><th>Obtained</th><td>2026-10-05</td></tr>
+  <tr><th>Open question</th><td>How the &#x27;originally obtained form&#x27; clause applies to WFS data and derived aggregates.</td></tr>
+</table>
+
+<h2 id="imgw_raingrs">IMGW-PIB RainGRS</h2>
+<table>
+  <tr><th>Provider</th><td>Instytut Meteorologii i Gospodarki Wodnej – Państwowy Instytut Badawczy</td></tr>
+  <tr><th>Product</th><td>RainGRS hourly precipitation grs_60_asc (Oper/ and Arch/Nowcasting)</td></tr>
+  <tr><th>Licence / terms</th><td><a href="https://danepubliczne.imgw.pl/">IMGW-PIB data terms (regulamin udostępniania danych)</a></td></tr>
+  <tr><th>Source</th><td><a href="https://danepubliczne.imgw.pl/">https://danepubliczne.imgw.pl/</a></td></tr>
+  <tr><th>Required notices</th><td>Źródłem pochodzenia danych jest Instytut Meteorologii i Gospodarki Wodnej – Państwowy Instytut Badawczy.<br>Dane Instytutu Meteorologii i Gospodarki Wodnej – Państwowego Instytutu Badawczego zostały przetworzone.</td></tr>
+  <tr><th>Changes</th><td>Hourly fields summed per Warsaw-local day and blended with model rain.</td></tr>
+  <tr><th>Open question</th><td>Whether hourly RainGRS falls under the high-value dataset rules of Regulation (EU) 2023/138 for business use.</td></tr>
+</table>
+
+<h2 id="bdot10k">BDOT10k</h2>
+<table>
+  <tr><th>Provider</th><td>Główny Urząd Geodezji i Kartografii (GUGiK)</td></tr>
+  <tr><th>Product</th><td>BDOT10k schema 2021, OT_PTLZ_A (RODZAJ=las)</td></tr>
+  <tr><th>Licence / terms</th><td><a href="https://www.geoportal.gov.pl/pl/dane/baza-danych-obiektow-topograficznych-bdot10k/">Public data, free reuse (Prawo geodezyjne i kartograficzne)</a></td></tr>
+  <tr><th>Source</th><td><a href="https://opendata.geoportal.gov.pl/bdot10k/schemat2021/GeoParquet/OT_PTLZ_A.parquet">https://opendata.geoportal.gov.pl/bdot10k/schemat2021/GeoParquet/OT_PTLZ_A.parquet</a></td></tr>
+  <tr><th>Changes</th><td>Forest tracts intersected with 1 km cells and used to group named forests.</td></tr>
+</table>
+
+<h2 id="prng">PRNG</h2>
+<table>
+  <tr><th>Provider</th><td>Główny Urząd Geodezji i Kartografii (GUGiK)</td></tr>
+  <tr><th>Product</th><td>Państwowy Rejestr Nazw Geograficznych, forest names (WFS)</td></tr>
+  <tr><th>Licence / terms</th><td><a href="https://www.geoportal.gov.pl/pl/dane/panstwowy-rejestr-nazw-geograficznych-prng/">Public data, free reuse</a></td></tr>
+  <tr><th>Source</th><td><a href="https://mapy.geoportal.gov.pl/wss/service/PZGiK/PRNG/WFS/GeographicalNames">https://mapy.geoportal.gov.pl/wss/service/PZGiK/PRNG/WFS/GeographicalNames</a></td></tr>
+  <tr><th>Changes</th><td>Name points matched to forest areas.</td></tr>
+</table>
+
+<h2 id="prg">PRG</h2>
+<table>
+  <tr><th>Provider</th><td>Główny Urząd Geodezji i Kartografii (GUGiK)</td></tr>
+  <tr><th>Product</th><td>Państwowy Rejestr Granic, communes and national boundary</td></tr>
+  <tr><th>Licence / terms</th><td><a href="https://www.geoportal.gov.pl/pl/dane/panstwowy-rejestr-granic-prg/">Public data, free reuse</a></td></tr>
+  <tr><th>Source</th><td><a href="https://www.geoportal.gov.pl/pl/dane/panstwowy-rejestr-granic-prg/">https://www.geoportal.gov.pl/pl/dane/panstwowy-rejestr-granic-prg/</a></td></tr>
+  <tr><th>Changes</th><td>Simplified for map tiles; used to clip other layers.</td></tr>
+</table>
+
+<h2 id="gdos">GDOŚ protected areas</h2>
+<table>
+  <tr><th>Provider</th><td>Generalna Dyrekcja Ochrony Środowiska (GDOŚ)</td></tr>
+  <tr><th>Product</th><td>WFS GDOS:ParkiNarodowe and GDOS:Rezerwaty</td></tr>
+  <tr><th>Licence / terms</th><td><a href="https://www.gov.pl/web/gdos/dostep-do-danych-geoprzestrzennych">Public data, free reuse</a></td></tr>
+  <tr><th>Source</th><td><a href="https://sdi.gdos.gov.pl/wfs">https://sdi.gdos.gov.pl/wfs</a></td></tr>
+  <tr><th>Required notices</th><td>Boundaries are not a legal determination of the protected area limits.</td></tr>
+  <tr><th>Changes</th><td>Buffer zones dropped, clipped to Poland, simplified 20 m.</td></tr>
+</table>
+
+<h2 id="osm">OpenStreetMap</h2>
+<table>
+  <tr><th>Provider</th><td>OpenStreetMap contributors</td></tr>
+  <tr><th>Product</th><td>Poland extract via Geofabrik: woodland, forest names, places, military land</td></tr>
+  <tr><th>Licence / terms</th><td><a href="https://opendatacommons.org/licenses/odbl/1-0/">ODbL 1.0</a></td></tr>
+  <tr><th>Source</th><td><a href="https://www.openstreetmap.org/copyright">https://www.openstreetmap.org/copyright</a></td></tr>
+  <tr><th>Required notices</th><td>Contains information from OpenStreetMap, which is made available here under the Open Database License (ODbL).</td></tr>
+  <tr><th>Changes</th><td>See the ODbL section: derived databases and how to get them.</td></tr>
+</table>
+
+<h2 id="odbl">OpenStreetMap and the ODbL</h2>
+<p>Some published files combine OpenStreetMap data with other sources. They are derived databases under the ODbL 1.0 and we make each of them available, as a whole, under that licence. The files are at <a href="https://maps.shroomer.app/conditions/v2/static/manifest.json">https://maps.shroomer.app/conditions/v2/static/</a> (listed with checksums in manifest.json, licence notice in <a href="https://maps.shroomer.app/conditions/v2/static/LICENSE.txt">LICENSE.txt</a>); <a href="https://maps.shroomer.app/conditions/v2/latest.json">latest.json</a> names the files of the current nightly run.</p>
+<p class="callout">Contains information from OpenStreetMap, which is made available here under the Open Database License (ODbL). <a href="https://opendatacommons.org/licenses/odbl/1-0/">https://opendatacommons.org/licenses/odbl/1-0/</a></p>
+<p>Files made available under the ODbL 1.0:</p>
+<ul>
+  <li><code>static/forest-cells-*.pmtiles</code></li>
+  <li><code>static/forest-outline-*.pmtiles</code></li>
+  <li><code>static/forest-names-*.pmtiles</code></li>
+  <li><code>static/forests-*.json, static/forest-members-*.npz</code></li>
+  <li><code>static/restricted-*.pmtiles</code></li>
+  <li><code>runs/&lt;run&gt;/cells.pmtiles, runs/&lt;run&gt;/forests.json</code></li>
+</ul>
+<p>The other files (e.g. overview.pmtiles, places-*, gminy-*, habitat, climatology) hold no OpenStreetMap data and are subject to their sources&#x27; terms.</p>
+
+<footer class="page">
+  Shroomer — Contact: <a href="mailto:shroomer.app@gmail.com">shroomer.app@gmail.com</a>
+</footer>
+</main>
+</body>
+</html>

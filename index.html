@@ -36,7 +36,8 @@ miejsca znalezisk i pokazuje je innym użytkownikom aplikacji.</p>
   <tr><th>Dane</th><th>Skąd</th><th>Po co</th></tr>
   <tr><td>Adres e-mail</td><td>Podajesz przy rejestracji albo przekazuje go Google, jeśli logujesz się kontem Google</td><td>Logowanie i odzyskiwanie dostępu</td></tr>
   <tr><td>Nazwa wyświetlana</td><td>Podajesz w aplikacji; przy logowaniu kontem Google na start bierzemy imię i nazwisko z tego konta (możesz je zmienić)</td><td>Pokazanie Cię innym użytkownikom</td></tr>
-  <tr><td><strong>Dokładna lokalizacja (GPS)</strong></td><td>Z telefonu, <strong>także przy zgaszonym ekranie</strong></td><td>Zapis trasy wyprawy i miejsc znalezisk</td></tr>
+  <tr><td><strong>Dokładna lokalizacja (GPS) w trakcie wyprawy</strong></td><td>Z telefonu, <strong>także przy zgaszonym ekranie</strong></td><td>Zapis trasy wyprawy i miejsc znalezisk</td></tr>
+  <tr><td>Bieżąca lokalizacja poza wyprawą</td><td>Z telefonu, tylko gdy aplikacja jest otwarta na mapie</td><td>Pokazanie Twojej pozycji na mapie i wyszukiwanie lasów w pobliżu („Blisko mnie”); <strong>zostaje na telefonie, nie wysyłamy jej</strong></td></tr>
   <tr><td><strong>Dokładne współrzędne znalezisk</strong></td><td>Z telefonu w momencie dodania znaleziska</td><td>Pokazanie znaleziska na mapie</td></tr>
   <tr><td>Zdjęcia znalezisk</td><td>Z aparatu lub galerii telefonu</td><td>Zapis i pokazanie znaleziska</td></tr>
   <tr><td>Zdjęcie profilowe</td><td>Wybierasz z galerii telefonu (opcjonalnie)</td><td>Pokazanie Cię innym użytkownikom</td></tr>
@@ -58,6 +59,8 @@ sprzedajemy danych i nie mamy w aplikacji reklam ani analityki zachowania.</p>
   <tr><td>Konto i logowanie, zapis wypraw, tras, lokalizacji, znalezisk i zdjęć, obserwowanie, komentarze i reakcje, powiadomienia push</td><td>Art. 6 ust. 1 lit. b — świadczenie usługi, z której korzystasz</td></tr>
   <tr><td>Moderacja: zgłoszenia, blokady, zapis akceptacji regulaminu społeczności, ochrona przed nadużyciami</td><td>Art. 6 ust. 1 lit. f — nasz prawnie uzasadniony interes w bezpiecznej społeczności</td></tr>
   <tr><td>Zapis podpowiedzi modelu i wybranego gatunku (bez zdjęcia)</td><td>Art. 6 ust. 1 lit. f — nasz prawnie uzasadniony interes w poprawie rozpoznawania; możesz się temu sprzeciwić</td></tr>
+  <tr><td>Pokazanie Twojej pozycji na mapie i lasów w pobliżu („Blisko mnie”), na telefonie</td><td>Art. 6 ust. 1 lit. b — świadczenie usługi, z której korzystasz</td></tr>
+  <tr><td>Dostarczanie plików mapy i mapy warunków (adres IP i dane techniczne żądań widoczne dla Cloudflare)</td><td>Art. 6 ust. 1 lit. f — nasz prawnie uzasadniony interes w dostarczeniu mapy i ochronie serwera przed nadużyciami</td></tr>
   <tr><td>Obsługa Twoich żądań dotyczących danych</td><td>Art. 6 ust. 1 lit. c — obowiązek prawny wynikający z RODO</td></tr>
 </table>
 <p>Podanie adresu e-mail jest konieczne do założenia konta. Wszystko inne podajesz
@@ -69,9 +72,9 @@ nie nagrasz trasy).</p>
 zgody na lokalizację w tle ślad urywałby się po chwili, a funkcja <strong>powrotu do
 auta</strong> — prowadząca z powrotem po własnych śladach — przestałaby działać. Jest
 to funkcja bezpieczeństwa w lesie, nie wygoda.</p>
-<p>Lokalizacja jest zapisywana <strong>wyłącznie w trakcie trwającej wyprawy</strong>,
-którą sam uruchamiasz i sam kończysz. Po zakończeniu wyprawy aplikacja przestaje
-odczytywać położenie. Jak telefon pokazuje, że trwa nagrywanie:</p>
+<p>Lokalizacja jest <strong>zapisywana i odczytywana w tle wyłącznie w trakcie
+trwającej wyprawy</strong>, którą sam uruchamiasz i sam kończysz. Po zakończeniu wyprawy
+aplikacja przestaje śledzić położenie w tle. Jak telefon pokazuje, że trwa nagrywanie:</p>
 <ul>
   <li><strong>Android</strong> — stałe powiadomienie w pasku powiadomień. Jeśli
   wyłączysz powiadomienia dla Shroomera, nagrywanie działa dalej, ale Android 13
@@ -81,6 +84,23 @@ odczytywać położenie. Jak telefon pokazuje, że trwa nagrywanie:</p>
   <li>W samej aplikacji ekran nagrywania pokazuje trwającą wyprawę, dopóki jej nie
   zakończysz.</li>
 </ul>
+
+<h2>Lokalizacja poza wyprawą — mapa i „Blisko mnie”</h2>
+<p>Także bez wyprawy aplikacja odczytuje Twoje położenie, <strong>tylko gdy jest
+otwarta</strong> i tylko jeśli wcześniej zgodziłeś się na dostęp do lokalizacji:</p>
+<ul>
+  <li><strong>Mapa</strong> — przy wejściu na zakładkę Mapa aplikacja ustawia mapę na
+  Twojej pozycji, a na mapach (także w szczegółach wyprawy) pokazuje kropkę z Twoim
+  położeniem.</li>
+  <li><strong>Mapa warunków, „Blisko mnie”</strong> — szuka lasów w promieniu od Twojej
+  pozycji. Pierwsze wyszukanie dzieje się samo po włączeniu warstwy warunków, jeśli zgoda
+  na lokalizację już jest; kolejne po naciśnięciu „Blisko mnie”.</li>
+</ul>
+<p>Te odczyty <strong>nie są zapisywane i nie opuszczają telefonu</strong>: aplikacja
+sama filtruje i sortuje lasy na telefonie, a listę lasów i ich ocen pobiera w plikach
+obejmujących całą Polskę. Nie wysyłamy Twoich współrzędnych do nas, do Copernicus/ECMWF
+ani nikomu innemu. Jedyny ślad to pobieranie fragmentów mapy dla oglądanego obszaru
+z Cloudflare (niżej).</p>
 
 <h2>Kto widzi Twoje dane — najważniejsza część tego dokumentu</h2>
 <p>Shroomer jest aplikacją społecznościową. Twoje wyprawy, <strong>z trasą i
@@ -108,9 +128,18 @@ ustawienie, które miały — sprawdź je w Profil → Prywatność.</p>
 <ul>
   <li><strong>Supabase</strong> — baza danych i przechowywanie zdjęć. Serwery w
   Unii Europejskiej (Frankfurt, Niemcy). Dane w tranzycie szyfrowane (HTTPS).</li>
-  <li><strong>Cloudflare R2</strong> — hosting podkładu mapy. <strong>Nie wysyłamy
-  tam żadnych danych osobowych</strong> — aplikacja tylko pobiera stamtąd gotowe kafle
-  mapy (jak każdy serwer, widzi przy tym adres IP pobierającego).</li>
+  <li><strong>Cloudflare</strong> (R2, adres maps.shroomer.app) — hosting podkładu mapy
+  i danych mapy warunków. Aplikacja tylko pobiera stamtąd gotowe pliki; nie wysyłamy tam
+  Twojego konta, nazwy ani położenia. Przy każdym pobraniu Cloudflare otrzymuje jednak,
+  jak każdy serwer, Twój <strong>adres IP i dane techniczne żądania</strong> (adres pliku
+  i fragment mapy, którego dotyczy, czas, typ aplikacji). Przetwarza je, żeby dostarczyć
+  pliki i chronić usługę przed nadużyciami, zgodnie ze swoją
+  <a href="https://www.cloudflare.com/privacypolicy/">polityką prywatności</a>.
+  <!-- KAN-313: VERIFY in the Cloudflare dashboard before publishing (Logpush, R2 bucket
+  settings, Web Analytics). If nothing is enabled, keep the next sentence; otherwise state
+  what is logged and for how long. Remove this comment. -->
+  My nie włączyliśmy zapisu logów tych żądań i nie łączymy ich z Twoim kontem. Źródła
+  i licencje danych mapy warunków: <a href="data-sources.html">data-sources.html</a>.</li>
   <li><strong>Google</strong> — trzy rzeczy:
     <ul>
       <li><strong>Gmail</strong> — wysyłka e-maili logowania (np. reset hasła). Widzi

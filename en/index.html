@@ -38,7 +38,8 @@ the spots where you found mushrooms and shows them to other users of the app.</p
   <tr><th>Data</th><th>Where it comes from</th><th>What it is for</th></tr>
   <tr><td>E-mail address</td><td>You enter it when you register, or Google provides it if you sign in with a Google account</td><td>Signing in and recovering access</td></tr>
   <tr><td>Display name</td><td>You enter it in the app; when you sign in with a Google account, we start with the first and last name from that account (you can change it)</td><td>Showing you to other users</td></tr>
-  <tr><td><strong>Precise location (GPS)</strong></td><td>From your phone, <strong>also while the screen is off</strong></td><td>Recording the trip route and the spots of your finds</td></tr>
+  <tr><td><strong>Precise location (GPS) during a trip</strong></td><td>From your phone, <strong>also while the screen is off</strong></td><td>Recording the trip route and the spots of your finds</td></tr>
+  <tr><td>Current location outside a trip</td><td>From your phone, only while the app is open on a map</td><td>Showing your position on the map and finding forests near you ("Near me"); <strong>it stays on your phone, we do not send it</strong></td></tr>
   <tr><td><strong>Precise coordinates of finds</strong></td><td>From your phone at the moment you add a find</td><td>Showing the find on the map</td></tr>
   <tr><td>Photos of finds</td><td>From your phone's camera or gallery</td><td>Saving and showing the find</td></tr>
   <tr><td>Profile photo</td><td>You pick it from your phone's gallery (optional)</td><td>Showing you to other users</td></tr>
@@ -60,6 +61,8 @@ not sell data, and the app has no ads and no behavioural analytics.</p>
   <tr><td>Account and sign-in, recording trips, routes, location, finds and photos, following, comments and reactions, push notifications</td><td>Art. 6(1)(b) — providing the service you use</td></tr>
   <tr><td>Moderation: reports, blocks, record of accepting the community terms, protection against abuse</td><td>Art. 6(1)(f) — our legitimate interest in a safe community</td></tr>
   <tr><td>Saving the model's suggestion and the species you chose (without the photo)</td><td>Art. 6(1)(f) — our legitimate interest in improving recognition; you can object to it</td></tr>
+  <tr><td>Showing your position on the map and forests near you ("Near me"), on your phone</td><td>Art. 6(1)(b) — providing the service you use</td></tr>
+  <tr><td>Delivering map and conditions-map files (IP address and technical request data seen by Cloudflare)</td><td>Art. 6(1)(f) — our legitimate interest in delivering the map and protecting the server against abuse</td></tr>
   <tr><td>Handling your requests about your data</td><td>Art. 6(1)(c) — legal obligation under the GDPR</td></tr>
 </table>
 <p>Giving an e-mail address is required to create an account. Everything else is
@@ -72,9 +75,10 @@ off. Without permission to use location in the background, the track would break
 after a moment, and the <strong>back to the car</strong> feature — which guides you back
 along your own track — would stop working. It is a safety feature in the forest, not a
 convenience.</p>
-<p>Location is recorded <strong>only during an ongoing trip</strong>, which you start
-yourself and end yourself. Once the trip ends, the app stops reading your position.
-How your phone shows that recording is on:</p>
+<p>Location is <strong>recorded and read in the background only during an ongoing
+trip</strong>, which you start yourself and end yourself. Once the trip ends, the app
+stops tracking your position in the background. How your phone shows that recording
+is on:</p>
 <ul>
   <li><strong>Android</strong> — a persistent notification in the notification bar.
   If you turn off notifications for Shroomer, recording keeps working, but Android 13
@@ -84,6 +88,22 @@ How your phone shows that recording is on:</p>
   <li>In the app itself, the recording screen shows the ongoing trip until you end
   it.</li>
 </ul>
+
+<h2>Location outside a trip — the map and "Near me"</h2>
+<p>Without a trip, too, the app reads your position, <strong>only while it is
+open</strong> and only if you have already allowed location access:</p>
+<ul>
+  <li><strong>Map</strong> — when you open the Map tab, the app centres the map on your
+  position, and maps (including in trip details) show a dot with your location.</li>
+  <li><strong>Conditions map, "Near me"</strong> — finds forests within a radius of your
+  position. The first search happens on its own when you turn on the conditions layer and
+  location permission is already granted; later ones when you press "Near me".</li>
+</ul>
+<p>These readings <strong>are not saved and do not leave your phone</strong>: the app
+filters and sorts forests on the phone, and downloads the list of forests and their
+scores in files that cover all of Poland. We do not send your coordinates to us, to
+Copernicus/ECMWF or to anyone else. The only trace is downloading the map pieces for the
+area you are viewing from Cloudflare (below).</p>
 
 <h2>Who sees your data — the most important part of this document</h2>
 <p>Shroomer is a social app. Your trips, <strong>with the route and find pins accurate
@@ -111,9 +131,19 @@ Profile → Privacy.</p>
 <ul>
   <li><strong>Supabase</strong> — database and photo storage. Servers in the European
   Union (Frankfurt, Germany). Data encrypted in transit (HTTPS).</li>
-  <li><strong>Cloudflare R2</strong> — hosting of the base map. <strong>We do not send
-  any personal data there</strong> — the app only downloads ready-made map tiles from it
-  (like any server, it sees the IP address of the device downloading them).</li>
+  <li><strong>Cloudflare</strong> (R2, address maps.shroomer.app) — hosting of the base
+  map and of the conditions-map data. The app only downloads ready-made files from it; we
+  do not send your account, name or location there. With every download, however,
+  Cloudflare receives, like any server, your <strong>IP address and technical request
+  data</strong> (the file address and the map piece it covers, the time, the app type). It
+  processes them to deliver the files and protect the service against abuse, under its
+  <a href="https://www.cloudflare.com/privacypolicy/">privacy policy</a>.
+  <!-- KAN-313: VERIFY in the Cloudflare dashboard before publishing (Logpush, R2 bucket
+  settings, Web Analytics). If nothing is enabled, keep the next sentence; otherwise state
+  what is logged and for how long. Remove this comment. -->
+  We have not turned on logging of these requests and we do not link them to your account.
+  Sources and licences of the conditions-map data:
+  <a href="data-sources.html">data-sources.html</a>.</li>
   <li><strong>Google</strong> — three things:
     <ul>
       <li><strong>Gmail</strong> — sending sign-in e-mails (e.g. password reset). It
