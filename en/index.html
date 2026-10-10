@@ -17,7 +17,7 @@
 </header>
 
 <h1>Shroomer app privacy policy</h1>
-<p class="updated">Last updated: 9 October 2026</p>
+<p class="updated">Last updated: 10 October 2026</p>
 
 <div class="note">
   This is a translation of the Polish original; if they differ, the Polish version
@@ -54,6 +54,18 @@ A photo reaches the server only if you save it as a find.</p>
 <p><strong>We do not collect</strong> any advertising data, we do not profile you, we do
 not sell data, and the app has no ads and no behavioural analytics.</p>
 
+<h2>Legal bases for processing</h2>
+<table>
+  <tr><th>Purpose</th><th>Legal basis (GDPR)</th></tr>
+  <tr><td>Account and sign-in, recording trips, routes, location, finds and photos, following, comments and reactions, push notifications</td><td>Art. 6(1)(b) — providing the service you use</td></tr>
+  <tr><td>Moderation: reports, blocks, record of accepting the community terms, protection against abuse</td><td>Art. 6(1)(f) — our legitimate interest in a safe community</td></tr>
+  <tr><td>Saving the model's suggestion and the species you chose (without the photo)</td><td>Art. 6(1)(f) — our legitimate interest in improving recognition; you can object to it</td></tr>
+  <tr><td>Handling your requests about your data</td><td>Art. 6(1)(c) — legal obligation under the GDPR</td></tr>
+</table>
+<p>Giving an e-mail address is required to create an account. Everything else is
+voluntary — without it some features simply do not work (e.g. without location
+permission you cannot record a route).</p>
+
 <h2>Background location — why we ask for this permission</h2>
 <p>A mushroom-picking trip lasts for hours with the phone in your pocket and the screen
 off. Without permission to use location in the background, the track would break off
@@ -62,8 +74,16 @@ along your own track — would stop working. It is a safety feature in the fores
 convenience.</p>
 <p>Location is recorded <strong>only during an ongoing trip</strong>, which you start
 yourself and end yourself. Once the trip ends, the app stops reading your position.
-While recording, a persistent notification is shown in your phone's notification bar —
-we never record invisibly.</p>
+How your phone shows that recording is on:</p>
+<ul>
+  <li><strong>Android</strong> — a persistent notification in the notification bar.
+  If you turn off notifications for Shroomer, recording keeps working, but Android 13
+  and newer then show it only in the list of active apps (pull down the notification
+  shade → active apps), not in the bar itself.</li>
+  <li><strong>iPhone</strong> — the blue location indicator in the status bar.</li>
+  <li>In the app itself, the recording screen shows the ongoing trip until you end
+  it.</li>
+</ul>
 
 <h2>Who sees your data — the most important part of this document</h2>
 <p>Shroomer is a social app. Your trips, <strong>with the route and find pins accurate
@@ -94,10 +114,10 @@ Profile → Privacy.</p>
   <li><strong>Cloudflare R2</strong> — hosting of the base map. <strong>We do not send
   any personal data there</strong> — the app only downloads ready-made map tiles from it
   (like any server, it sees the IP address of the device downloading them).</li>
-  <li><strong>Resend</strong> — sending sign-in e-mails (e.g. password reset). It sees
-  only your e-mail address at the moment of sending.</li>
-  <li><strong>Google</strong> — two things:
+  <li><strong>Google</strong> — three things:
     <ul>
+      <li><strong>Gmail</strong> — sending sign-in e-mails (e.g. password reset). It
+      sees your e-mail address and the content of that message.</li>
       <li><strong>Sign-in with a Google account</strong>, only if you choose it. Google
       confirms to us your e-mail address and your first and last name. We do not receive
       your Google account password.</li>
@@ -111,14 +131,26 @@ Profile → Privacy.</p>
   Google. It sees the same as Firebase Cloud Messaging: the token and the content of the
   notification.</li>
 </ul>
-<p>Google and Expo may process this data on servers outside the European Union,
-including in the USA.</p>
+<h3>Transfers outside the European Economic Area</h3>
+<p>Some providers are US companies and may process data outside the EEA:</p>
+<ul>
+  <li><strong>Google, Expo and Cloudflare</strong> — on the basis of their
+  certification under the EU-U.S. Data Privacy Framework (a European Commission
+  adequacy decision), and outside its scope on the basis of standard contractual
+  clauses approved by the European Commission.</li>
+  <li><strong>Supabase</strong> — the data sits in Frankfurt, but the company is based
+  in the USA; any access from outside the EEA is covered by the European Commission's
+  standard contractual clauses in Supabase's data processing agreement.</li>
+</ul>
+<p>You can get a copy of these safeguards by writing to
+<a href="mailto:shroomer.app@gmail.com">shroomer.app@gmail.com</a>.</p>
 <p>We do not pass data to anyone else and we do not sell it.</p>
 
 <h2>How long we keep data</h2>
 <p>We keep your account data for as long as the account exists. After it is deleted,
-the data disappears from our database immediately and irreversibly; backups on the
-provider's side (Supabase) are overwritten in a cycle of up to 7 days — see below.</p>
+the data disappears from our database immediately and irreversibly. We do not make database backups, and on the plan we use
+the provider (Supabase) does not make automatic backups — so there is no copy from which
+deleted data could be restored.</p>
 
 <h2>Deleting your account and data</h2>
 <p><strong>In the app:</strong> Profile → Privacy → <strong>Delete account</strong>
@@ -127,12 +159,16 @@ provider's side (Supabase) are overwritten in a cycle of up to 7 days — see be
 <a href="mailto:shroomer.app@gmail.com">shroomer.app@gmail.com</a> from the address the
 account is registered with. We delete it within 30 days. Details:
 <a href="account-deletion.html">account-deletion.html</a>.</p>
-<p>Deleting your account erases the account, the profile with its photo, all trips,
-routes, raw GPS points, finds, all photos and saved car positions. The operation
-cannot be undone — we have no trash bin and no copy from which it could be restored
-(apart from the provider's backup cycle described above).</p>
-<p>If you created a trip together with others, deleting the account of the person who
-started it deletes the whole trip, together with the other participants' finds.</p>
+<p>Deleting your account erases the account, the profile with its photo, all trips
+(except as described below), routes, raw GPS points, finds, all photos, comments,
+reactions and saved car positions. The operation cannot be undone — we have no trash
+bin and no copy from which it could be restored.</p>
+<p><strong>A joint trip you started</strong> is not deleted if other participants are
+in it — so that they do not lose their own finds. It passes to the participant who
+joined earliest (among those who have not left it or who added finds to it). Your
+finds, route and photos from that trip are deleted; its title and description stay,
+taken over by the new owner. If no such participant is left, the whole trip is
+deleted.</p>
 
 <h2>Your rights</h2>
 <p>You have the right to access your data, to have it rectified or erased, to restrict

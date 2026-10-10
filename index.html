@@ -17,7 +17,7 @@
 </header>
 
 <h1>Polityka prywatności aplikacji Shroomer</h1>
-<p class="updated">Data ostatniej zmiany: 9 października 2026</p>
+<p class="updated">Data ostatniej zmiany: 10 października 2026</p>
 
 <div class="note">
   Dokument nie jest poradą prawną. Jeżeli szukasz informacji o usunięciu konta,
@@ -52,6 +52,18 @@ aplikacji. Zdjęcie trafia na serwer tylko wtedy, gdy zapiszesz je jako znalezis
 <p><strong>Nie zbieramy</strong> żadnych danych reklamowych, nie profilujemy, nie
 sprzedajemy danych i nie mamy w aplikacji reklam ani analityki zachowania.</p>
 
+<h2>Na jakiej podstawie przetwarzamy dane</h2>
+<table>
+  <tr><th>Cel</th><th>Podstawa prawna (RODO)</th></tr>
+  <tr><td>Konto i logowanie, zapis wypraw, tras, lokalizacji, znalezisk i zdjęć, obserwowanie, komentarze i reakcje, powiadomienia push</td><td>Art. 6 ust. 1 lit. b — świadczenie usługi, z której korzystasz</td></tr>
+  <tr><td>Moderacja: zgłoszenia, blokady, zapis akceptacji regulaminu społeczności, ochrona przed nadużyciami</td><td>Art. 6 ust. 1 lit. f — nasz prawnie uzasadniony interes w bezpiecznej społeczności</td></tr>
+  <tr><td>Zapis podpowiedzi modelu i wybranego gatunku (bez zdjęcia)</td><td>Art. 6 ust. 1 lit. f — nasz prawnie uzasadniony interes w poprawie rozpoznawania; możesz się temu sprzeciwić</td></tr>
+  <tr><td>Obsługa Twoich żądań dotyczących danych</td><td>Art. 6 ust. 1 lit. c — obowiązek prawny wynikający z RODO</td></tr>
+</table>
+<p>Podanie adresu e-mail jest konieczne do założenia konta. Wszystko inne podajesz
+dobrowolnie — bez tego część funkcji po prostu nie działa (np. bez zgody na lokalizację
+nie nagrasz trasy).</p>
+
 <h2>Lokalizacja w tle — dlaczego prosimy o tę zgodę</h2>
 <p>Wyprawa na grzyby trwa godzinami z telefonem w kieszeni i zgaszonym ekranem. Bez
 zgody na lokalizację w tle ślad urywałby się po chwili, a funkcja <strong>powrotu do
@@ -59,8 +71,16 @@ auta</strong> — prowadząca z powrotem po własnych śladach — przestałaby 
 to funkcja bezpieczeństwa w lesie, nie wygoda.</p>
 <p>Lokalizacja jest zapisywana <strong>wyłącznie w trakcie trwającej wyprawy</strong>,
 którą sam uruchamiasz i sam kończysz. Po zakończeniu wyprawy aplikacja przestaje
-odczytywać położenie. W trakcie nagrywania w pasku powiadomień telefonu widnieje stałe
-powiadomienie — nigdy nie nagrywamy niewidocznie.</p>
+odczytywać położenie. Jak telefon pokazuje, że trwa nagrywanie:</p>
+<ul>
+  <li><strong>Android</strong> — stałe powiadomienie w pasku powiadomień. Jeśli
+  wyłączysz powiadomienia dla Shroomera, nagrywanie działa dalej, ale Android 13
+  i nowsze pokazują je wtedy tylko na liście aktywnych aplikacji (rozwiń pasek
+  powiadomień → aktywne aplikacje), a nie w samym pasku.</li>
+  <li><strong>iPhone</strong> — niebieski wskaźnik lokalizacji na pasku stanu.</li>
+  <li>W samej aplikacji ekran nagrywania pokazuje trwającą wyprawę, dopóki jej nie
+  zakończysz.</li>
+</ul>
 
 <h2>Kto widzi Twoje dane — najważniejsza część tego dokumentu</h2>
 <p>Shroomer jest aplikacją społecznościową. Twoje wyprawy, <strong>z trasą i
@@ -91,10 +111,10 @@ ustawienie, które miały — sprawdź je w Profil → Prywatność.</p>
   <li><strong>Cloudflare R2</strong> — hosting podkładu mapy. <strong>Nie wysyłamy
   tam żadnych danych osobowych</strong> — aplikacja tylko pobiera stamtąd gotowe kafle
   mapy (jak każdy serwer, widzi przy tym adres IP pobierającego).</li>
-  <li><strong>Resend</strong> — wysyłka e-maili logowania (np. reset hasła). Widzi
-  wyłącznie Twój adres e-mail w momencie wysyłki.</li>
-  <li><strong>Google</strong> — dwie rzeczy:
+  <li><strong>Google</strong> — trzy rzeczy:
     <ul>
+      <li><strong>Gmail</strong> — wysyłka e-maili logowania (np. reset hasła). Widzi
+      Twój adres e-mail i treść tej wiadomości.</li>
       <li><strong>Logowanie kontem Google</strong>, tylko jeśli je wybierzesz. Google
       potwierdza nam Twój adres e-mail oraz imię i nazwisko. Nie dostajemy hasła do
       konta Google.</li>
@@ -106,14 +126,26 @@ ustawienie, które miały — sprawdź je w Profil → Prywatność.</p>
   <li><strong>Expo</strong> — pośredniczy w wysyłce powiadomień push do Google. Widzi
   to samo co Firebase Cloud Messaging: token i treść powiadomienia.</li>
 </ul>
-<p>Google i Expo mogą przetwarzać te dane na serwerach poza Unią Europejską, m.in.
-w USA.</p>
+<h3>Przekazywanie danych poza Europejski Obszar Gospodarczy</h3>
+<p>Część dostawców to firmy z USA i mogą przetwarzać dane poza EOG:</p>
+<ul>
+  <li><strong>Google, Expo i Cloudflare</strong> — na podstawie certyfikacji
+  w EU-U.S. Data Privacy Framework (decyzja Komisji Europejskiej stwierdzająca
+  odpowiedni stopień ochrony), a poza jej zakresem na podstawie standardowych klauzul
+  umownych zatwierdzonych przez Komisję Europejską.</li>
+  <li><strong>Supabase</strong> — dane leżą we Frankfurcie, ale firma ma siedzibę
+  w USA; ewentualny dostęp spoza EOG jest objęty standardowymi klauzulami umownymi
+  Komisji Europejskiej w umowie powierzenia Supabase.</li>
+</ul>
+<p>Kopię zabezpieczeń możesz otrzymać, pisząc na
+<a href="mailto:shroomer.app@gmail.com">shroomer.app@gmail.com</a>.</p>
 <p>Nie przekazujemy danych nikomu innemu i nie sprzedajemy ich.</p>
 
 <h2>Jak długo trzymamy dane</h2>
 <p>Dane Twojego konta trzymamy tak długo, jak długo istnieje konto. Po jego usunięciu
-znikają z naszej bazy natychmiast i bezpowrotnie; kopie zapasowe po stronie dostawcy
-(Supabase) są nadpisywane w cyklu do 7 dni — patrz niżej.</p>
+znikają z naszej bazy natychmiast i bezpowrotnie. Nie robimy kopii zapasowych bazy,
+a w planie, z którego korzystamy, dostawca (Supabase) nie tworzy automatycznych kopii —
+nie ma więc kopii, z której dałoby się usunięte dane przywrócić.</p>
 
 <h2>Usunięcie konta i danych</h2>
 <p><strong>W aplikacji:</strong> Profil → Prywatność → <strong>Usuń konto</strong>
@@ -122,12 +154,16 @@ znikają z naszej bazy natychmiast i bezpowrotnie; kopie zapasowe po stronie dos
 <a href="mailto:shroomer.app@gmail.com">shroomer.app@gmail.com</a> z adresu, na który
 zarejestrowane jest konto. Usuwamy je w ciągu 30 dni. Szczegóły:
 <a href="account-deletion.html">account-deletion.html</a>.</p>
-<p>Usunięcie konta kasuje konto, profil ze zdjęciem profilowym, wszystkie wyprawy,
-trasy, surowe punkty GPS, znaleziska, wszystkie zdjęcia i zapisane pozycje auta.
-Operacji nie da się cofnąć — nie mamy kosza ani kopii, z której dałoby się to
-przywrócić (poza cyklem kopii zapasowych dostawcy opisanym wyżej).</p>
-<p>Jeśli wyprawę współtworzyłeś z innymi, usunięcie konta jej założyciela usuwa całą
-wyprawę razem ze znaleziskami pozostałych uczestników.</p>
+<p>Usunięcie konta kasuje konto, profil ze zdjęciem profilowym, wszystkie wyprawy
+(poza wyjątkiem niżej), trasy, surowe punkty GPS, znaleziska, wszystkie zdjęcia,
+komentarze, reakcje i zapisane pozycje auta. Operacji nie da się cofnąć — nie mamy
+kosza ani kopii, z której dałoby się to przywrócić.</p>
+<p><strong>Wspólna wyprawa, którą założyłeś</strong>, nie znika, jeśli są w niej inni
+uczestnicy — żeby nie zabrać im ich własnych znalezisk. Przechodzi na uczestnika, który
+dołączył najwcześniej (spośród tych, którzy z niej nie wyszli albo dodali w niej
+znaleziska). Twoje znaleziska, trasa i zdjęcia z tej wyprawy są usuwane; zostają jej
+tytuł i opis, które przejmuje nowy właściciel. Jeśli nikt taki nie został, wyprawa jest
+usuwana w całości.</p>
 
 <h2>Twoje prawa</h2>
 <p>Masz prawo do dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia
