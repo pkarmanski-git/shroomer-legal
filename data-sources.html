@@ -18,7 +18,7 @@
 </header>
 
 <h1>Źródła danych mapy warunków</h1>
-<p class="updated">Data ostatniej zmiany: 10 października 2026</p>
+<p class="updated">Data ostatniej zmiany: 12 października 2026</p>
 
 <div class="note">Mapa warunków owocnikowania w aplikacji Shroomer jest wyliczana z danych pogodowych, leśnych i glebowych z poniższych źródeł. Każde źródło ma własną licencję lub regulamin; poniżej są wymagane oznaczenia, cytowania i opis zmian, jakie wprowadziliśmy. Shroomer nie jest powiązany z dostawcami danych ani przez nich zatwierdzony. Mapa pokazuje warunki, nie prawdopodobieństwo znalezienia grzybów.</div>
 
@@ -127,10 +127,10 @@
 <h2 id="prng">PRNG</h2>
 <table>
   <tr><th>Dostawca</th><td>Główny Urząd Geodezji i Kartografii (GUGiK)</td></tr>
-  <tr><th>Produkt</th><td>Państwowy Rejestr Nazw Geograficznych, forest names (WFS)</td></tr>
+  <tr><th>Produkt</th><td>Państwowy Rejestr Nazw Geograficznych: towns, villages, forests and forest complexes (WFS)</td></tr>
   <tr><th>Licencja / warunki</th><td><a href="https://www.geoportal.gov.pl/pl/dane/panstwowy-rejestr-nazw-geograficznych-prng/">Public data, free reuse</a></td></tr>
   <tr><th>Źródło</th><td><a href="https://mapy.geoportal.gov.pl/wss/service/PZGiK/PRNG/WFS/GeographicalNames">https://mapy.geoportal.gov.pl/wss/service/PZGiK/PRNG/WFS/GeographicalNames</a></td></tr>
-  <tr><th>Zmiany</th><td>Punkty nazw dopasowane do obszarów leśnych.</td></tr>
+  <tr><th>Zmiany</th><td>Punkty nazw dopasowane do obszarów leśnych; kompleksom leśnym nadany promień wyszukiwania.</td></tr>
 </table>
 
 <h2 id="prg">PRG</h2>
@@ -145,11 +145,11 @@
 <h2 id="gdos">GDOŚ protected areas</h2>
 <table>
   <tr><th>Dostawca</th><td>Generalna Dyrekcja Ochrony Środowiska (GDOŚ)</td></tr>
-  <tr><th>Produkt</th><td>WFS GDOS:ParkiNarodowe and GDOS:Rezerwaty</td></tr>
+  <tr><th>Produkt</th><td>WFS GDOS:ParkiNarodowe, GDOS:Rezerwaty and the Natura 2000 areas (OSO, SOO)</td></tr>
   <tr><th>Licencja / warunki</th><td><a href="https://www.gov.pl/web/gdos/dostep-do-danych-geoprzestrzennych">Public data, free reuse</a></td></tr>
   <tr><th>Źródło</th><td><a href="https://sdi.gdos.gov.pl/wfs">https://sdi.gdos.gov.pl/wfs</a></td></tr>
   <tr><th>Wymagane informacje</th><td>Boundaries are not a legal determination of the protected area limits.</td></tr>
-  <tr><th>Zmiany</th><td>Usunięte otuliny, przycięte do granic Polski, uproszczone z tolerancją 20 m.</td></tr>
+  <tr><th>Zmiany</th><td>Parki i rezerwaty: usunięte otuliny, przycięte do granic Polski, uproszczone z tolerancją 20 m. Natura 2000: tylko obszary nazwane od kompleksu leśnego, sprowadzone do nazwy, środka i promienia wyszukiwania.</td></tr>
 </table>
 
 <h2 id="osm">OpenStreetMap</h2>

@@ -18,7 +18,7 @@
 </header>
 
 <h1>Data sources of the conditions map</h1>
-<p class="updated">Last updated: 10 October 2026</p>
+<p class="updated">Last updated: 12 October 2026</p>
 
 <div class="note">The fruiting-conditions map in the Shroomer app is computed from the weather, forest and soil data below. Each source has its own licence or terms; this page gives the required notices, citations and a description of our changes. Shroomer is not affiliated with or endorsed by any data provider. The map shows conditions, not the probability of finding mushrooms.</div>
 
@@ -127,10 +127,10 @@
 <h2 id="prng">PRNG</h2>
 <table>
   <tr><th>Provider</th><td>Główny Urząd Geodezji i Kartografii (GUGiK)</td></tr>
-  <tr><th>Product</th><td>Państwowy Rejestr Nazw Geograficznych, forest names (WFS)</td></tr>
+  <tr><th>Product</th><td>Państwowy Rejestr Nazw Geograficznych: towns, villages, forests and forest complexes (WFS)</td></tr>
   <tr><th>Licence / terms</th><td><a href="https://www.geoportal.gov.pl/pl/dane/panstwowy-rejestr-nazw-geograficznych-prng/">Public data, free reuse</a></td></tr>
   <tr><th>Source</th><td><a href="https://mapy.geoportal.gov.pl/wss/service/PZGiK/PRNG/WFS/GeographicalNames">https://mapy.geoportal.gov.pl/wss/service/PZGiK/PRNG/WFS/GeographicalNames</a></td></tr>
-  <tr><th>Changes</th><td>Name points matched to forest areas.</td></tr>
+  <tr><th>Changes</th><td>Name points matched to forest areas; forest complexes given a search radius.</td></tr>
 </table>
 
 <h2 id="prg">PRG</h2>
@@ -145,11 +145,11 @@
 <h2 id="gdos">GDOŚ protected areas</h2>
 <table>
   <tr><th>Provider</th><td>Generalna Dyrekcja Ochrony Środowiska (GDOŚ)</td></tr>
-  <tr><th>Product</th><td>WFS GDOS:ParkiNarodowe and GDOS:Rezerwaty</td></tr>
+  <tr><th>Product</th><td>WFS GDOS:ParkiNarodowe, GDOS:Rezerwaty and the Natura 2000 areas (OSO, SOO)</td></tr>
   <tr><th>Licence / terms</th><td><a href="https://www.gov.pl/web/gdos/dostep-do-danych-geoprzestrzennych">Public data, free reuse</a></td></tr>
   <tr><th>Source</th><td><a href="https://sdi.gdos.gov.pl/wfs">https://sdi.gdos.gov.pl/wfs</a></td></tr>
   <tr><th>Required notices</th><td>Boundaries are not a legal determination of the protected area limits.</td></tr>
-  <tr><th>Changes</th><td>Buffer zones dropped, clipped to Poland, simplified 20 m.</td></tr>
+  <tr><th>Changes</th><td>Parks and reserves: buffer zones dropped, clipped to Poland, simplified 20 m. Natura 2000: only areas named after a forest complex, reduced to a name, a centre and a search radius.</td></tr>
 </table>
 
 <h2 id="osm">OpenStreetMap</h2>
