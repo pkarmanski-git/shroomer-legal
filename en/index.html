@@ -17,7 +17,7 @@
 </header>
 
 <h1>Shroomer app privacy policy</h1>
-<p class="updated">Last updated: 12 October 2026</p>
+<p class="updated">Last updated: 13 October 2026</p>
 
 <div class="note">
   This is a translation of the Polish original; if they differ, the Polish version
@@ -40,12 +40,13 @@ the spots where you found mushrooms and shows them to other users of the app.</p
   <tr><td>Display name</td><td>You enter it in the app; when you sign in with a Google account, we start with the first and last name from that account (you can change it)</td><td>Showing you to other users</td></tr>
   <tr><td><strong>Precise location (GPS) during a trip</strong></td><td>From your phone, <strong>also while the screen is off</strong></td><td>Recording the trip route and the spots of your finds</td></tr>
   <tr><td>Current location outside a trip</td><td>From your phone, only while the app is open on a map</td><td>Showing your position on the map and finding forests near you ("Near me"); <strong>it stays on your phone, we do not send it</strong></td></tr>
+  <tr><td>Condition alerts (optional)</td><td>You set them up yourself on the conditions map</td><td>A town (its name and its point on the map, to about 1 km) with a radius, or a chosen forest, plus the species, threshold and days. Every morning the server checks the forecast for them and sends a notification. For "Near me" the phone itself picks the nearest town — <strong>we do not send your GPS position</strong>. Deleted together with the alert or the account</td></tr>
   <tr><td><strong>Precise coordinates of finds</strong></td><td>From your phone at the moment you add a find</td><td>Showing the find on the map</td></tr>
   <tr><td>Photos of finds</td><td>From your phone's camera or gallery</td><td>Saving and showing the find</td></tr>
   <tr><td>Profile photo</td><td>You pick it from your phone's gallery (optional)</td><td>Showing you to other users</td></tr>
   <tr><td>Species, quantity, notes</td><td>You enter them yourself</td><td>Statistics and trip history</td></tr>
   <tr><td>Comments and reactions</td><td>You write and give them yourself</td><td>Conversation under trips and finds</td></tr>
-  <tr><td>Push notification token</td><td>From your phone, if you agree to notifications</td><td>Notifying you of a new comment under your trip; we delete it when you sign out</td></tr>
+  <tr><td>Push notification token</td><td>From your phone, if you agree to notifications</td><td>Notifying you of a new comment under your trip and, if you set them up, of good conditions in a forest; we delete it when you sign out</td></tr>
   <tr><td>Reports and blocks</td><td>You report a comment, trip or profile, or block a user</td><td>Moderation; a report contains your identifier as the person reporting and is reviewed manually</td></tr>
   <tr><td>Recognition suggestions</td><td>From the model on your phone</td><td>A record of which suggestion the model showed and which species you chose (without the photo) — to assess recognition quality</td></tr>
 </table>
@@ -62,6 +63,7 @@ not sell data, and the app has no ads and no behavioural analytics.</p>
   <tr><td>Moderation: reports, blocks, record of accepting the community terms, protection against abuse</td><td>Art. 6(1)(f) — our legitimate interest in a safe community</td></tr>
   <tr><td>Saving the model's suggestion and the species you chose (without the photo)</td><td>Art. 6(1)(f) — our legitimate interest in improving recognition; you can object to it</td></tr>
   <tr><td>Showing your position on the map and forests near you ("Near me"), on your phone</td><td>Art. 6(1)(b) — providing the service you use</td></tr>
+  <tr><td>Condition alerts you set up</td><td>Art. 6(1)(b) — providing the service you use</td></tr>
   <tr><td>Delivering map and conditions-map files (IP address and technical request data seen by Cloudflare)</td><td>Art. 6(1)(f) — our legitimate interest in delivering the map and protecting the server against abuse</td></tr>
   <tr><td>Handling your requests about your data</td><td>Art. 6(1)(c) — legal obligation under the GDPR</td></tr>
 </table>
@@ -104,6 +106,11 @@ filters and sorts forests on the phone, and downloads the list of forests and th
 scores in files that cover all of Poland. We do not send your coordinates to us, to
 Copernicus/ECMWF or to anyone else. The only trace is downloading the map pieces for the
 area you are viewing from Cloudflare (below).</p>
+<p>One exception you choose yourself: a <strong>condition alert</strong> for "Near me"
+saves the nearest town on the server, worked out on your phone — its name and a point to
+about 1 km, not your coordinates. An alert for "Around an address" saves that town, and a
+forest alert saves the forest. The notification's text (forest name, day, score) passes
+through Expo and Firebase Cloud Messaging like any push notification (below).</p>
 
 <h2>Who sees your data — the most important part of this document</h2>
 <p>Shroomer is a social app. Your trips, <strong>with the route and find pins accurate

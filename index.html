@@ -17,7 +17,7 @@
 </header>
 
 <h1>Polityka prywatności aplikacji Shroomer</h1>
-<p class="updated">Data ostatniej zmiany: 12 października 2026</p>
+<p class="updated">Data ostatniej zmiany: 13 października 2026</p>
 
 <div class="note">
   Dokument nie jest poradą prawną. Jeżeli szukasz informacji o usunięciu konta,
@@ -38,12 +38,13 @@ miejsca znalezisk i pokazuje je innym użytkownikom aplikacji.</p>
   <tr><td>Nazwa wyświetlana</td><td>Podajesz w aplikacji; przy logowaniu kontem Google na start bierzemy imię i nazwisko z tego konta (możesz je zmienić)</td><td>Pokazanie Cię innym użytkownikom</td></tr>
   <tr><td><strong>Dokładna lokalizacja (GPS) w trakcie wyprawy</strong></td><td>Z telefonu, <strong>także przy zgaszonym ekranie</strong></td><td>Zapis trasy wyprawy i miejsc znalezisk</td></tr>
   <tr><td>Bieżąca lokalizacja poza wyprawą</td><td>Z telefonu, tylko gdy aplikacja jest otwarta na mapie</td><td>Pokazanie Twojej pozycji na mapie i wyszukiwanie lasów w pobliżu („Blisko mnie”); <strong>zostaje na telefonie, nie wysyłamy jej</strong></td></tr>
+  <tr><td>Powiadomienia o warunkach (opcjonalnie)</td><td>Ustawiasz je sam na mapie warunków</td><td>Miejscowość (nazwa i jej punkt na mapie, z dokładnością ok. 1 km) z promieniem albo wybrany las, do tego gatunki, próg i dni. Codziennie rano serwer sprawdza dla nich prognozę i wysyła powiadomienie. Przy „Blisko mnie” telefon sam wybiera najbliższą miejscowość — <strong>Twojej pozycji GPS nie wysyłamy</strong>. Usuwamy je razem z powiadomieniem albo kontem</td></tr>
   <tr><td><strong>Dokładne współrzędne znalezisk</strong></td><td>Z telefonu w momencie dodania znaleziska</td><td>Pokazanie znaleziska na mapie</td></tr>
   <tr><td>Zdjęcia znalezisk</td><td>Z aparatu lub galerii telefonu</td><td>Zapis i pokazanie znaleziska</td></tr>
   <tr><td>Zdjęcie profilowe</td><td>Wybierasz z galerii telefonu (opcjonalnie)</td><td>Pokazanie Cię innym użytkownikom</td></tr>
   <tr><td>Gatunek, ilość, notatki</td><td>Wpisujesz sam</td><td>Statystyki i historia wypraw</td></tr>
   <tr><td>Komentarze i reakcje</td><td>Piszesz i dajesz sam</td><td>Rozmowa pod wyprawami i znaleziskami</td></tr>
-  <tr><td>Token powiadomień push</td><td>Z telefonu, jeśli zgodzisz się na powiadomienia</td><td>Powiadomienie o nowym komentarzu pod Twoją wyprawą; usuwamy go przy wylogowaniu</td></tr>
+  <tr><td>Token powiadomień push</td><td>Z telefonu, jeśli zgodzisz się na powiadomienia</td><td>Powiadomienie o nowym komentarzu pod Twoją wyprawą, a jeśli je ustawisz — o dobrych warunkach w lesie; usuwamy go przy wylogowaniu</td></tr>
   <tr><td>Zgłoszenia i blokady</td><td>Zgłaszasz komentarz, wyprawę lub profil albo blokujesz użytkownika</td><td>Moderacja; zgłoszenie zawiera Twój identyfikator jako zgłaszającego i jest rozpatrywane ręcznie</td></tr>
   <tr><td>Podpowiedzi rozpoznawania</td><td>Z modelu w telefonie</td><td>Zapis, jaką podpowiedź pokazał model i jaki gatunek wybrałeś (bez zdjęcia) — do oceny jakości rozpoznawania</td></tr>
 </table>
@@ -60,6 +61,7 @@ sprzedajemy danych i nie mamy w aplikacji reklam ani analityki zachowania.</p>
   <tr><td>Moderacja: zgłoszenia, blokady, zapis akceptacji regulaminu społeczności, ochrona przed nadużyciami</td><td>Art. 6 ust. 1 lit. f — nasz prawnie uzasadniony interes w bezpiecznej społeczności</td></tr>
   <tr><td>Zapis podpowiedzi modelu i wybranego gatunku (bez zdjęcia)</td><td>Art. 6 ust. 1 lit. f — nasz prawnie uzasadniony interes w poprawie rozpoznawania; możesz się temu sprzeciwić</td></tr>
   <tr><td>Pokazanie Twojej pozycji na mapie i lasów w pobliżu („Blisko mnie”), na telefonie</td><td>Art. 6 ust. 1 lit. b — świadczenie usługi, z której korzystasz</td></tr>
+  <tr><td>Powiadomienia o warunkach, które ustawiasz</td><td>Art. 6 ust. 1 lit. b — świadczenie usługi, z której korzystasz</td></tr>
   <tr><td>Dostarczanie plików mapy i mapy warunków (adres IP i dane techniczne żądań widoczne dla Cloudflare)</td><td>Art. 6 ust. 1 lit. f — nasz prawnie uzasadniony interes w dostarczeniu mapy i ochronie serwera przed nadużyciami</td></tr>
   <tr><td>Obsługa Twoich żądań dotyczących danych</td><td>Art. 6 ust. 1 lit. c — obowiązek prawny wynikający z RODO</td></tr>
 </table>
@@ -101,6 +103,11 @@ sama filtruje i sortuje lasy na telefonie, a listę lasów i ich ocen pobiera w 
 obejmujących całą Polskę. Nie wysyłamy Twoich współrzędnych do nas, do Copernicus/ECMWF
 ani nikomu innemu. Jedyny ślad to pobieranie fragmentów mapy dla oglądanego obszaru
 z Cloudflare (niżej).</p>
+<p>Wyjątek, który wybierasz sam: <strong>powiadomienie o warunkach</strong> dla „Blisko
+mnie” zapisuje na serwerze najbliższą miejscowość, wyliczoną na telefonie — jej nazwę i punkt
+z dokładnością ok. 1 km, nie Twoje współrzędne. Tak samo zapisuje miejscowość z „Wokół
+adresu” albo wybrany las. Treść powiadomienia (nazwa lasu, dzień, ocena) przechodzi przez
+Expo i Firebase Cloud Messaging jak każde powiadomienie push (niżej).</p>
 
 <h2>Kto widzi Twoje dane — najważniejsza część tego dokumentu</h2>
 <p>Shroomer jest aplikacją społecznościową. Twoje wyprawy, <strong>z trasą i
